@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christyn Louise Fatima L. Tolentino | Portfolio</title>
+
+<style> 
+
+:root {
+    --primary: #c8a2ff;
+    --primary-dark: #a678e2;
+    --bg: #f7f5fb;
+    --card: #ffffff;
+    --text: #333;
+}
+
+body.dark {
+    --bg: #1f1f2e;
+    --card: #2c2c3f;
+    --text: #f1f1f1;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--card);
+    border-bottom: 3px solid var(--primary);
+    position: relative;
+}
+
+
+.dark-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    border: none;
+    background: var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.dark-toggle:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    margin: 10px 0;
+}
+
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    background: var(--card);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.skills-list li {
+    margin: 8px 0;
+}
+
+a {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card);
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding-top: 60px;
+    }
+}
+
+@media print {
+    .dark-toggle {
+        display: none;
+    }
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <button class="dark-toggle" onclick="toggleDarkMode()" id="modeToggle" aria-label="Toggle dark mode">
+        🌙 Dark Mode
+    </button>
+
+    <h1>Christyn Louise Fatima L. Tolentino</h1>
+    <p><strong>Aspiring IT Professional</strong></p>
+  <img src="chloe.jpg.png" class="profile-img" alt="Profile Photo">
+</header>
+
+<main>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+     Dedicated and motivated Information Technology student with a strong interest in learning and personal growth. I am responsible, organized, and committed to achieving academic and professional goals. I enjoy working in team environments, sharing ideas, and supporting others to complete tasks successfully.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>Strong work ethic and commitment to studies</li>
+        <li>Good time management and organizational skills </li>
+        <li>Teamwork and collaboration</li>
+        <li>Positive attitude and willingness to improve</li>
+        <li>Good communication skills</li>
+    </ul>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <li>Worked on database design and basic network configuration projects.</p>
+    <li>Installed and configured operating systems and applications</p>
+    <li>Developed small-scale software projects and web applications as part of coursework</p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:chloetolentino10@gmail.com">chloetolentino10@gmail.com</a></p>
+    <p>Facebook: 
+        <a href="https://www.facebook.com/khuhlui/" target="_blank">
+        Visit My Profile</a>
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Christyn Louise Fatima L. Tolentino</p>
+</footer>
+
+<script>
+
+window.onload = function() {
+    const savedMode = localStorage.getItem("mode");
+    const button = document.getElementById("modeToggle");
+
+    if (savedMode === "dark") {
+        document.body.classList.add("dark");
+        button.textContent = "☀ Light Mode";
+    } else {
+        button.textContent = "🌙 Dark Mode";
+    }
+};
+
+function toggleDarkMode() {
+    const body = document.body;
+    const button = document.getElementById("modeToggle");
+
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+        button.textContent = "☀ Light Mode";
+        localStorage.setItem("mode", "dark");
+    } else {
+        button.textContent = "🌙 Dark Mode";
+        localStorage.setItem("mode", "light");
+    }
+}
+
+</script>
+
+</body>
+</html>

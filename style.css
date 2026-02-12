@@ -1,0 +1,119 @@
+:root {
+    --primary: #c8a2ff;
+    --primary-dark: #a678e2;
+    --bg: #f7f5fb;
+    --card: #ffffff;
+    --text: #333;
+}
+
+body.dark {
+    --bg: #1f1f2e;
+    --card: #2c2c3f;
+    --text: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--card);
+    border-bottom: 3px solid var(--primary);
+    position: relative;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    border: none;
+    background: var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.dark-toggle:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    margin: 10px 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    background: var(--card);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.skills-list li {
+    margin: 8px 0;
+}
+
+a {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card);
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding-top: 60px;
+    }
+}
+
+@media print {
+    .dark-toggle {
+        display: none;
+    }
+    body {
+        background: white;
+        color: black;
+    }
+}
